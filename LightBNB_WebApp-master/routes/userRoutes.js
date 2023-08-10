@@ -30,7 +30,7 @@ router.post("/login", (req, res) => {
     if (!user) {
       return res.send({ error: "no user with that id" });
     }
-
+    
     if (!bcrypt.compareSync(password, user.password)) {
       return res.send({ error: "error" });
     }
